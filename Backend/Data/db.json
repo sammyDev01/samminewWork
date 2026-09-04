@@ -1,0 +1,8 @@
+{
+  "mainProfile1":
+    {
+      "name": "wizzy",
+      "age": "12"
+    },
+  "$schema": "./node_modules/json-server/schema.json"
+}
