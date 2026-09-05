@@ -25,7 +25,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:40000000000000000000",
+    origin: ["https://samminewwork.onrender.com0000000000000000",
             "http://localhost:5174",
     ],
     methods: ["GET", "POST"]

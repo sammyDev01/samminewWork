@@ -12,7 +12,7 @@ const DoctorQueue = () => {
   const getWaitingPatients = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:40000/api/queue/waiting",
+        "https://samminewwork.onrender.com/api/queue/waiting",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ const DoctorQueue = () => {
   const attendPatient = async (queueId) => {
     try {
       const response = await axios.put(
-        `http://localhost:40000/api/queue/attend/${queueId}`,
+        `https://samminewwork.onrender.com/api/queue/attend/${queueId}`,
         {},
         {
           headers: {
@@ -70,7 +70,7 @@ const DoctorQueue = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/queue/complete/${currentPatient._id}`,
+        `https://samminewwork.onrender.com/api/queue/complete/${currentPatient._id}`,
         {},
         {
           headers: {
