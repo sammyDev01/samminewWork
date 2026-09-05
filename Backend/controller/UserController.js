@@ -226,6 +226,8 @@ const listAppointment = async (req, res)=>{
             return res.json({success: false, messgae:" User Id not found"})
         }
         const appointments = await appointmentModel.find({userId}).sort({createdAt: -1})
+        
+        // .populate("doctorId", "name image speciality addres")
 
 
         res.json({success: true, appointments})

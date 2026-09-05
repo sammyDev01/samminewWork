@@ -16,6 +16,7 @@ const MyAppointment = () => {
   const [appointments, setAppiointments] = useState([])
   const month = ["","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
    const slotDateFormat = (slotDate) =>{
+    if(!slotDate) return "Date not Found "
     const dataArray = slotDate.split('_')
     return dataArray[0]+ "  " + month[Number(dataArray[1])] + " " + dataArray[2]
 
@@ -234,7 +235,7 @@ const navigate = useNavigate();
                     duration-500
                     group-hover:scale-105
                   "
-                  src={item.doctorData.image}
+                  src={item.doctorData?.image}
                   alt=""
                 />
 
@@ -260,7 +261,7 @@ const navigate = useNavigate();
                 text-slate-800
                 truncate
               ">
-                {item.doctorData.name}
+                {item.doctorData?.name}
               </p>
 
 
@@ -272,7 +273,7 @@ const navigate = useNavigate();
                 font-medium
                 mt-1
               ">
-                {item.doctorData.speciality}
+                {item.doctorData?.speciality}
               </p>
 
 
@@ -298,11 +299,11 @@ const navigate = useNavigate();
                 </p>
 
                 <p className="text-[11px] sm:text-xs text-slate-500">
-                  {item.doctorData.address.line1}
+                  {item.doctorData?.address?.line1}
                 </p>
 
                 <p className="text-[11px] sm:text-xs text-slate-500">
-                  {item.doctorData.address.line2}
+                  {item.doctorData?.address.line2}
                 </p>
 
               </div>
@@ -331,7 +332,7 @@ const navigate = useNavigate();
                   font-medium
                 ">
                   <MdDateRange />
-                  {slotDateFormat(item.slotDate)}
+                  {slotDateFormat(item?.slotDate)}
                 </span>
 
                 <span className="
@@ -369,8 +370,8 @@ const navigate = useNavigate();
 
              <div>
               {
-                item.cancelled ||
-                item.isCompleted ? "":
+                !item.cancelled &&
+                !item.isCompleted && item.type === "video" ?
                   <button
 
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"
@@ -379,7 +380,7 @@ const navigate = useNavigate();
                  }
                   >
                  Join Live Consultation
-                </button> 
+                </button> : ""
     }
             </div>
 
@@ -402,9 +403,9 @@ const navigate = useNavigate();
                     sm:py-3
                     px-4
                     rounded-xl
-                    hover:bg-blue-600
+                    hover:bg-green-600
                     hover:text-white
-                    hover:border-blue-600
+                    hover:border-black-600
                     hover:shadow-md
                     hover:shadow-blue-100
                     active:scale-[0.98]

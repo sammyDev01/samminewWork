@@ -64,7 +64,7 @@ const doctorLogin = async (req, res)=>{
 const appointentForDoctor = async (req, res)=>{
     try {
         const  doctorId = req.doctorId.id
-        const appointments = await appointmentModel.find({doctorId});
+        const appointments = await appointmentModel.find({doctorId}).sort({data: -1});
          res.json({success: true, appointments})  
     } catch (error) {
         console.log("error connection", error)

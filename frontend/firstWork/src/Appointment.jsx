@@ -167,6 +167,10 @@ const Appointment = () => {
                 </p>
             ))}
         </div>
+        <div className='flex gap-4 items-center w-full overflow-x-scroll mt-4'>
+            <button onClick={()=>setConsultType('physical')} className={consultType === 'physical' ? 'bg-blue-500 text-white p-4 rounded-full' : 'rounded-full border p-4 border-gray-300 bg-gray-200 text-gray-700'}>PHYSICAL VISIT</button>
+            <button onClick={()=>setConsultType('video')} className={consultType === 'video' ? 'bg-blue-500 text-white p-4 rounded-full' : 'rounded-full border p-4 border-gray-300 bg-gray-200 text-gray-700'}>VIDEO</button>
+        </div>
         <button onClick={bookAppointment} className='bg-blue-500 text-white text-sm font-light px-14 py-3 rounded-full my-6'>BOOK AN APPOINTMENT</button>
       </div>
       {/* -----------Listig related Doctors--- */}

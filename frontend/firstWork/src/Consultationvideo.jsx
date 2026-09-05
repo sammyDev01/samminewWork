@@ -1,6 +1,10 @@
 import React, { useEffect , useRef, useState} from "react";
 import { useParams } from "react-router-dom";
 import socket from "./sockek";
+import { FaMicrophone } from "react-icons/fa";
+import { FaMicrophoneSlash } from "react-icons/fa";
+import { MdVideocamOff } from "react-icons/md";
+import { MdVideoCall } from "react-icons/md";
 
 const Consultationvideo = () => {
   const { appointmentId } = useParams();
@@ -142,11 +146,12 @@ const Consultationvideo = () => {
         peerConnectionRef.current.close();
       }
     };
+    
+  }, [appointmentId]);
 
-
-    socket.emit("join-consultation", appointmentId);
-
-    const handleDoctorJoined = (data) => {
+  useEffect(() => {
+      socket.emit("join-consultation", appointmentId);
+      const handleDoctorJoined = (data) => {
       console.log("Another user joined:", data.socketId);
     };
 
@@ -155,8 +160,7 @@ const Consultationvideo = () => {
     return () => {
       socket.off("user-joined", handleDoctorJoined);
     };
-  }, [appointmentId]);
-
+  },[appointmentId])
 
   const toggleMicrophone = () => {
     const audioTracks =
@@ -340,7 +344,9 @@ const leaveCall = () => {
               }
             `}
           >
-            {micOn ? "🎤" : "🔇"}
+            
+
+            {micOn ? <FaMicrophone /> : <FaMicrophoneSlash  />}
           </button>
 
 
@@ -360,7 +366,7 @@ const leaveCall = () => {
               }
             `}
           >
-            {cameraOn ? "📹" : "🚫"}
+            {cameraOn ? <MdVideoCall /> :< MdVideocamOff  />}
           </button>
 
 

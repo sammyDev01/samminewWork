@@ -1,6 +1,10 @@
 import React, { useEffect,  useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import socket from "../../socket";
+import { FaMicrophone } from "react-icons/fa";
+import { FaMicrophoneSlash } from "react-icons/fa";
+import { MdVideocamOff } from "react-icons/md";
+import { MdVideoCall } from "react-icons/md";
 
 const DoctorConsultation = () => {
   const { appointmentId } = useParams();
@@ -333,7 +337,7 @@ const DoctorConsultation = () => {
               }
             `}
           >
-            {micOn ? "🎤" : "🔇"}
+            {micOn ? <FaMicrophone /> : <FaMicrophoneSlash />}
           </button>
 
 
@@ -353,7 +357,7 @@ const DoctorConsultation = () => {
               }
             `}
           >
-            {cameraOn ? "📹" : "🚫"}
+            {cameraOn ? <MdVideoCall /> :<MdVideocamOff />}
           </button>
 
 

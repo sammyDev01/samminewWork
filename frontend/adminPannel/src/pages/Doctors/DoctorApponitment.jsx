@@ -6,6 +6,7 @@ import {AppContext} from '../../context/appContext'
 import {assets} from '../../assets/assets_admin/assets'
 import { FaCalendarCheck } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -17,7 +18,7 @@ const DoctorApponitment = () => {
        getAppointment,markAppointmentComplete,
        cancelAppointment} = useContext(DoctorContext)
     const {calculateAge, slotDateFormat} = useContext(AppContext)
-
+       const navigate = useNavigate()
        useEffect(()=>{
         if(dToken){
             getAppointment()
@@ -151,7 +152,7 @@ const DoctorApponitment = () => {
 
     <div className="
       hidden md:grid
-      grid-cols-[60px_2fr_100px_1.5fr_1.5fr]
+      grid-cols-[60px_2fr_100px_1.5fr_1.5fr_0.5fr]
       items-center
       gap-4
       px-6
@@ -169,6 +170,7 @@ const DoctorApponitment = () => {
       <p>Patient</p>
       <p>Age</p>
       <p>Date & Time</p>
+      <p className="text-center">Action</p>
       <p className="text-center">Action</p>
 
     </div>
@@ -196,7 +198,7 @@ const DoctorApponitment = () => {
 
             grid
             grid-cols-1
-            md:grid-cols-[60px_2fr_100px_1.5fr_1.5fr]
+            md:grid-cols-[60px_2fr_100px_1.5fr_1.5fr_0.5fr]
 
             items-center
             gap-3
@@ -448,8 +450,10 @@ const DoctorApponitment = () => {
                 </span>
             </p>
 
-
-            {/* ACTION */}
+            
+                    
+        <div>
+                {/* ACTION */}
              {
                 item.cancelled ? <p className="
                 inline-flex items-center gap-2 px-3 py-2 rounded-xl  bg-red-50
@@ -472,6 +476,14 @@ const DoctorApponitment = () => {
                   className=" w-full h-10  p-2.5 rounded-xl cursor-pointer bg-emerald-50 border border-emerald-100 hover:bg-emerald-500 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-100 hover:scale-105 active:scale-95 transition-all duration-300 " src={assets.tick_icon} alt="" />
                 </div>
              }
+            </div>
+            {
+                        item.type === "video" && !item.cancelled && !item.isCompleted && (
+                      <button  className="bg-blue-400 text-white p-2 m-4 w-33 h-9 rounded-full" onClick={()=>navigate(`/vidCons/${item._id}`)}>Joint Live</button>
+
+                        )
+                      }
+         
             
 
         </div>
