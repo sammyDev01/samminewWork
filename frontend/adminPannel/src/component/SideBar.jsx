@@ -4,7 +4,7 @@ import { AdminContext } from '../context/adminContext'
 import { NavLink } from 'react-router-dom'
 import { assets } from '../assets/assets_admin/assets'
 import { DoctorContext } from '../context/doctorContext'
-import {FaListOl, FaUserDoctor} from 'react-icons/fa6' 
+import {FaListOl, FaUserDoctor, FaCalendarCheck} from 'react-icons/fa6' 
 import { MdQueue } from "react-icons/md"
 
 const SideBar = () => {
@@ -13,13 +13,22 @@ const SideBar = () => {
     const {dToken} = useContext(DoctorContext)
   return (
    <div className='
-  min-h-screen
+    fixed
+    top-0
+    left-0
+    w-72
+    pt-35
+    z-50
+    h-screen
   bg-white
   border-r
-  border-slate-200
-  shadow-sm
+  border-gray-200
+  shadow-lg
   transition-all
   duration-300
+  overflow-y-auto
+
+  max-md:w-20
 '> 
      {aToken && <ul className='
        text-slate-600
@@ -110,6 +119,36 @@ const SideBar = () => {
                 <p className='hidden md:block text-sm lg:text-[15px] font-medium'>Appointment</p> 
             </NavLink> 
 
+                 <NavLink 
+              to={'/all-consultations'} 
+              className={({isActive})=>`
+                flex
+                items-center
+                justify-center
+                md:justify-start
+                gap-3
+                py-3
+                md:py-3.5
+                px-3
+                md:px-7
+                lg:px-9
+                md:w-72
+                w-full
+                cursor-pointer
+                rounded-xl
+                md:rounded-none
+                transition-all
+                duration-200
+                hover:bg-slate-50
+                hover:text-blue-600
+                ${isActive 
+                  ? 'bg-blue-50 text-blue-600 md:border-r-4 border-blue-500 shadow-sm md:shadow-none' 
+                  : ''
+                }
+              `}> 
+                <FaCalendarCheck />
+                <p className='hidden md:block text-sm lg:text-[15px] font-medium'>All Consultations</p> 
+            </NavLink> 
 
             <NavLink 
               to={'/add-Doctor'} 

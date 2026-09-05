@@ -1,8 +1,11 @@
 import React from 'react'
 import { assets } from '../assets/assets_frontend/assets'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { AppContext } from './context'
 
 const Homeheader = () => {
+  const {token} = useContext(AppContext)
   const navigate = useNavigate();
   return (
    <div className="
@@ -204,6 +207,61 @@ const Homeheader = () => {
         </span>
 
       </a>
+      { token ? "" :
+      <a
+        onClick={() => navigate('/login')}
+        className="
+        cursor-pointer
+          group
+          inline-flex
+          items-center
+          justify-center
+          gap-3
+          bg-white
+          text-blue-700
+          px-6
+          sm:px-8
+          py-3
+          sm:py-3.5
+          rounded-full
+          text-xs
+          sm:text-sm
+          font-semibold
+          shadow-md
+          hover:bg-blue-50
+          hover:shadow-xl
+          hover:-translate-y-1
+          active:translate-y-0
+          transition-all
+          duration-300
+        "
+      >
+        Click Here to Login <br /> Or Register
+
+        <span className="
+          flex
+          items-center
+          justify-center
+          w-6
+          h-6
+          rounded-full
+          bg-blue-50
+          group-hover:bg-blue-100
+        ">
+          <img
+            className="
+              w-3
+              group-hover:translate-x-0.5
+              transition-transform
+              duration-300
+            "
+            src={assets.arrow_icon}
+            alt=""
+          />
+        </span>
+
+      </a>
+      }
 
     </div>
 

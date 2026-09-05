@@ -140,7 +140,7 @@ const updateUserProfile = async (req, res) => {
 const bookAppointment = async (req, res) => {
     try {
         const userId = req.userId
-        const {  doctorId, slotDate, slotTime } = req.body;
+        const {  doctorId, slotDate, slotTime, type } = req.body;
         // Assuming the user ID is stored in req.user after authentication
        
         if(!userId){
@@ -193,6 +193,7 @@ const bookAppointment = async (req, res) => {
             doctorData:docData,
             slotDate,
             slotTime,
+            type: type || "physical",
             data: Date.now(),
             isCompleted: false,
             cancelled:false

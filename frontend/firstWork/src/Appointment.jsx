@@ -15,6 +15,7 @@ const Appointment = () => {
     const [docSlots, setDocSlots] = useState([])
     const [slotIndex, setSlotsIndex] = useState(0)
     const [slotTime, setSlotTime] = useState('')
+    const [consulType, setConsulType] = useState('physical')
 
     const fetchDocInfo = async () =>{
         const docInfo = doctors.find(doc => doc._id === docId)
@@ -94,7 +95,7 @@ const Appointment = () => {
 
 
             const slotDate = day + "_" + month + "_" + year 
-            const {data} = await axios.post(backendUrl + "/api/user/bookAppointmentOne", {doctorId:docId, slotDate, slotTime}, {headers:{Authorization:`Bearer ${token}`}})
+            const {data} = await axios.post(backendUrl + "/api/user/bookAppointmentOne", {doctorId:docId, slotDate, slotTime, type: consulType}, {headers:{Authorization:`Bearer ${token}`}})
            if(data.success){
             toast.success(data.message)
             getAllDoctorsData()

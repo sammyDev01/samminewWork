@@ -12,7 +12,8 @@ const Contact = () => {
       <div className='flex flex-col justify-center items-start gap-6'>
         <p className='font-semibold text-lg text-gray-600'>Our Office</p>
         <p className='text-gray-500'>Western Delta University, <br /> Oghara, Delta State</p>
-        <p className='text-gray-500'>Tel: (234) 8364-6754-54 <br />Email: orokSamuel038@gmail.com</p>
+        <a href="tel:+2348364675454" className='text-blue-500 hover:underline'>Call Us: <span className='font-normal text-gray-500'>(234) 8364-6754-54</span></a>
+        <p className='text-gray-500'>Tel: (234) 8364-6754-54 <br />Email: wduhealthcare@gmail.com</p>
         <p className='font-semibold '>Careers at WDU-HealthCare-service</p>
         <p className='text-gray-500'>learn more about our teams and job openings.</p>
         <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>

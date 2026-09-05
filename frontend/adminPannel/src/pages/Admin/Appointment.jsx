@@ -17,7 +17,7 @@ const Appointment = () => {
     }
  },[aToken])
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl w-full m-2 shadow-sm overflow-hidden">
+    <div className="bg-white border border-slate-200 rounded-2xl max-md:ml-24 md:ml-75 min-h-screen w-full m-2 shadow-sm overflow-hidden">
 
   {/* ================= HEADER ================= */}
   <div className="px-5 sm:px-6 py-5 border-b border-slate-200 bg-gradient-to-r from-white to-slate-50">

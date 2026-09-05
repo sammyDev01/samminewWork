@@ -27,6 +27,9 @@ const appointmentSchema = new mongoose.Schema({
     },
     isCompleted: {
         type: Boolean, default: false
+    }, 
+    type: {
+        type: String, enum: ["physical","video"], default: "physical"
     }
 })
 

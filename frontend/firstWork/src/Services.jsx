@@ -22,7 +22,7 @@ const {token} = useContext(AppContext)
     try {
       setLoading(true);
 
-      const response = await axios.get("http://localhost:5173/api/consultation/patient",
+      const response = await axios.get("http://localhost:4000/api/consultation/patient",
         {headers: {
             Authorization: `Bearer ${token}`}});
 

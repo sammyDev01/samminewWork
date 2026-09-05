@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { AppContext } from './context'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import {FaUser} from 'react-icons/fa'
+import {MdEmail} from 'react-icons/md'
+import {FaLock} from 'react-icons/fa'
+// import {FaTesthoscope} from 'react-icons/fa'
+import {FaStethoscope} from 'react-icons/fa'
+import {FaShieldAlt} from 'react-icons/fa'
 
 const Login = () => {
 
@@ -145,7 +151,7 @@ const Login = () => {
         "
       >
         <span className="text-2xl">
-          🩺
+          <FaStethoscope/>
         </span>
       </div>
 
@@ -193,7 +199,7 @@ const Login = () => {
         </label>
 
         <div className="relative">
-
+          
           <span
             className="
               absolute
@@ -203,7 +209,7 @@ const Login = () => {
               text-slate-400
             "
           >
-            👤
+            <FaUser className="text-blue-500"/>
           </span>
 
           <input
@@ -266,7 +272,7 @@ const Login = () => {
             text-slate-400
           "
         >
-          ✉
+          <MdEmail className="text-blue-500"/>
         </span>
 
         <input
@@ -328,7 +334,7 @@ const Login = () => {
             text-slate-400
           "
         >
-          🔒
+          <FaLock className="text-blue-500"/>
         </span>
 
         <input
@@ -484,7 +490,7 @@ const Login = () => {
         text-slate-400
       "
     >
-      <span>🔐</span>
+      <span><FaShieldAlt/></span>
       <span>Your information is securely protected</span>
     </div>
 

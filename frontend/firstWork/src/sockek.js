@@ -1,8 +1,8 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5173")
+const socket = io("http://localhost:4000")
   
-  // "http://localhost:5173");
+  // "http://localhost:40000");
 
 socket.on("connect", () => {
   console.log("Patient connected:", socket.id);

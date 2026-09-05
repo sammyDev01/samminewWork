@@ -18,12 +18,12 @@ import Admin from './models/adminModel.js'
 dotenv.config()
 const app = express()
 const server = http.createServer(app)
-const allowedOrigins = [
-  "https://new-wdu-healthsystemb.netlify.app",
-  "https://new-wdu-adminsite-healthsysystem.netlify.app",
-  "http://localhost:3000",
-  "http://localhost:5174"
-];
+// const allowedOrigins = [
+//   "https://new-wdu-healthsystemb.netlify.app",
+//   "https://new-wdu-adminsite-healthsysystem.netlify.app",
+//   "http://localhost:3000",
+//   "http://localhost:5174"
+// ];
 // app.post('/api/create-admin', async (req, res) =>{
 //   try {
 //     const { email, password } = req.body; 
@@ -45,12 +45,10 @@ const allowedOrigins = [
 // });
 
 app.use(cors({
-  origin: allowedOrigins,
+  // origin: allowedOrigins,
   //  origin: "http://localhost:5174",
-  //  origin: ["http://localhost:5173", "http://localhost:5174"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+   origin: ["http://localhost:5174",  "http://localhost:5173"],
   credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 // middleware
@@ -60,9 +58,9 @@ app.use(express.urlencoded({extended: true}))
 
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
+    // origin: allowedOrigins,
     // origin:  "http://localhost:5174",
-    // origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: ["http://localhost:5173", "http://localhost:5174"],
     credentials: true,
     methods: ["GET", "POST"]
   },

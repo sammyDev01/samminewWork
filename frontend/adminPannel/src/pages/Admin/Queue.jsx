@@ -23,7 +23,7 @@ const Queue = () => {
 
   }, []);
   return (
-    <div  className="flex-1 p-4 h-screen overflow-y-auto bg-slate-50">
+    <div  className="flex-1 p-4 max-md:ml-20 md:ml-72 min-h-screen overflow-y-auto bg-slate-50">
 
         {/* ================= QUEUE SECTION ================= */}
 

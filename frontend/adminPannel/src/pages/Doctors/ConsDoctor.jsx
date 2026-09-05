@@ -38,7 +38,7 @@ const navigate  = useNavigate();
   const getConsultations = async () => {
     try {
       setLoading(true)
-      const {data} = await axios.get("http://localhost:5173/api/consultation/doctor", {headers: {Authorization: `Bearer ${dToken}`}});
+      const {data} = await axios.get("http://localhost:4000/api/consultation/doctor", {headers: {Authorization: `Bearer ${dToken}`}});
 
       if (data.success) {
         setConsultations(data.consultations);
@@ -92,7 +92,7 @@ const navigate  = useNavigate();
   const startConsultation = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5173/api/consultation/start/${selectedConsultation._id}`,
+        `http://localhost:4000/api/consultation/start/${selectedConsultation._id}`,
         {},
         {
           headers: {
@@ -128,7 +128,7 @@ const navigate  = useNavigate();
     try {
       setSaving(true);
 
-      const {data} = await axios.put(`http://localhost:5173/api/consultation/update/${selectedConsultation._id}`,formData,{headers: {Authorization: `Bearer ${dToken}`,}});
+      const {data} = await axios.put(`http://localhost:4000/api/consultation/update/${selectedConsultation._id}`,formData,{headers: {Authorization: `Bearer ${dToken}`,}});
       if (data.success) {
         // alert("Consultation saved successfully");
         toast.success(data.message)
@@ -158,7 +158,7 @@ const navigate  = useNavigate();
     }
 
     try {
-      const {data} = await axios.put(`http://localhost:5173/api/consultation/complete/${selectedConsultation._id}`,{},{headers: {Authorization: `Bearer ${dToken}`}});
+      const {data} = await axios.put(`http://localhost:4000/api/consultation/complete/${selectedConsultation._id}`,{},{headers: {Authorization: `Bearer ${dToken}`}});
 
       if (data.success) {
        toast.success(data.message)
@@ -187,7 +187,7 @@ const navigate  = useNavigate();
 
   if (loading) {
     return (
-      <div className="min-h-[70vh] w-full flex items-center justify-center">
+      <div className="max-md:ml-20 md:ml-72 min-h-screen w-full  flex items-center justify-center">
   <div className="flex flex-col items-center justify-center gap-4">
 
     <div className="
@@ -216,7 +216,8 @@ const navigate  = useNavigate();
 
 
   return (
-   <div className="min-h-screen w-full bg-slate-50 p-3 sm:p-4 md:p-6">
+   <div className="    min-h-screen bg-blue-200 max-md:ml-24 md:ml-75
+ w-full bg-slate-50 p-3 sm:p-4 md:p-6">
 
   <div className="w-full max-w-7xl mx-auto">
 

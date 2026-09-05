@@ -13,6 +13,7 @@ const AdminContextProvider = (props)=>{
     const [dashData, setDashData] = useState(false)
     const [loading, setLoading] = useState(true);
     const [queue, setQueue] = useState([]);
+    const [consultations, setConsultations] = useState([])
 
     const [stats, setStats] = useState({
     totalQueues: 0,
@@ -47,6 +48,21 @@ const AdminContextProvider = (props)=>{
             if(data.success){
                 setUsers(data.users)
                 console.log(data.users)
+            }else{
+                toast.error(data.message)
+            }
+
+        } catch (error) {
+            toast.error(error.message)
+            console.log(error)
+        }
+    }
+    const getConsultations = async()=>{
+        try {
+            const {data} = await axios.get(backendUrl + '/api/admin/all-consultants', {headers:{Authorization:`Bearer ${aToken}`}})
+            if(data.success){
+                setConsultations(data.consultations)
+                console.log(data.consultations)
             }else{
                 toast.error(data.message)
             }
@@ -124,7 +140,10 @@ const AdminContextProvider = (props)=>{
         const { data } = await axios.get(backendUrl + '/api/queue/admin/stats',
         {headers: {Authorization:`Bearer ${aToken}`}});
 
-      if (data.success) {setStats(data.stats);} else{
+      if (data.success) {
+        setStats(data.stats)
+        console.log("Queue Stats:", data.stats);
+    } else{
         toast.error(data.message)
       }
 
@@ -138,8 +157,20 @@ const AdminContextProvider = (props)=>{
 
     }
   };
+
+  const getQueue = async () => {
+    try {
+        const { data } = await axios.get(backendUrl + '/api/admin/adminGetQueue', {headers: {Authorization:`Bearer ${aToken}`}});
+        setQueue(data.queue);
+        console.log("Queue Data:", data.queue);
+    } catch (error) {
+        console.log("ADMIN QUEUE ERROR:", error.response?.data || error.message);
+    }
+  };
+
     const values = {
        aToken, setAToken,
+       getQueue,
        backendUrl,
        getAllUsers,
        doctors,
@@ -154,7 +185,9 @@ const AdminContextProvider = (props)=>{
        stats, setStats,
        queue, setQueue,
        getQueueStats,
-       users
+       users,
+       consultations,
+       getConsultations
     }
     return (
         <AdminContext.Provider value={values}>

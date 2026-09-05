@@ -34,7 +34,7 @@ const NavBar = () => {
   shadow-sm
   sticky
   top-0
-  z-40
+  z-60
 '>
 
   <div className='

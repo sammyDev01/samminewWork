@@ -5,6 +5,8 @@ import { AdminContext } from '../../context/adminContext'
 import { AppContext } from '../../context/appContext'
 import { MdQueue } from "react-icons/md";
 import { MdFormatListNumbered } from "react-icons/md";
+import {FaCalendarCheck} from "react-icons/fa";
+import { FaUser } from 'react-icons/fa6'
 
 
 
@@ -18,152 +20,230 @@ const DoctorDashBoard = () => {
         }
        },[dToken])
   return dashData && (
-<div className="w-full p-3 sm:p-5">
+<div className="w-full min-h-screen bg-blue-200 max-md:ml-24 md:ml-75 min-h-screenp-3 sm:p-5 lg:p-7 max-md:ml-24 md:ml-75 bg-slate-50">
 
   {/* ================= DASHBOARD CARDS ================= */}
   <div className="
-    grid
-    grid-cols-1
-    sm:grid-cols-2
-    lg:grid-cols-3
-    gap-4
-    lg:gap-6
+    grid 
+    grid-cols-1 
+    sm:grid-cols-2 
+    lg:grid-cols-3 
+    gap-4 
+    lg:gap-6 
     w-full
+    
   ">
 
     {/* PATIENTS */}
     <div className="
+      group relative overflow-hidden
       flex items-center justify-between
-      min-h-[125px]
+      min-h-[128px]
       w-full
       gap-3
-      bg-white
+      
+      bg-black
       p-4 sm:p-5
-      rounded-2xl
-      border border-gray-200
-      shadow-sm
-      hover:shadow-lg
+      rounded-3xl
+      border border-blue-100
+      shadow-[0_8px_30px_rgb(15,23,42,0.06)]
+      hover:shadow-[0_18px_40px_rgb(37,99,235,0.15)]
       hover:-translate-y-1
       cursor-pointer
-      hover:scale-[1.02]
-      transition-all duration-300
+      hover:scale-[1.015]
+      transition-all duration-300 ease-out
+      before:absolute before:-right-12 before:-top-12
+      before:w-32 before:h-32 before:rounded-full
+      before:bg-blue-500/10
+      before:transition-transform before:duration-500
+      group-hover:before:scale-150
     ">
-      <img
-        className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-        src={assets.patients_icon}
-        alt=""
-      />
 
-      <div className="text-center">
+      <FaUser className="
+        relative z-10
+        w-10 h-9
+        sm:w-14 sm:h-14
+        object-contain
+        text-blue-600
+        drop-shadow-sm
+        transition-all duration-300
+        group-hover:scale-110
+        group-hover:-rotate-3
+      " />
+
+      <div className="relative z-10 text-center">
+
         <p className="
           text-2xl sm:text-3xl
           min-w-[55px]
           px-3
           py-1
-          rounded-full
+          rounded-2xl
           font-bold
-          bg-blue-700
+          bg-gradient-to-br from-blue-600 to-blue-800
           text-white
+          shadow-md shadow-blue-200
+          transition-all duration-300
+          group-hover:shadow-lg
+          group-hover:shadow-blue-300
         ">
           {dashData?.patients}
         </p>
 
-        <p className="text-sm sm:text-lg text-gray-400 font-medium mt-1">
+        <p className="
+          text-sm sm:text-lg
+          text-slate-500
+          font-semibold
+          mt-2
+        ">
           Patients
         </p>
+
       </div>
+
     </div>
 
 
     {/* APPOINTMENTS */}
     <div className="
+      group relative overflow-hidden
       flex items-center justify-between
-      min-h-[125px]
+      min-h-[128px]
       w-full
       gap-3
-      bg-white
+        bg-black
       p-4 sm:p-5
-      rounded-2xl
-      border border-gray-200
-      shadow-sm
-      hover:shadow-lg
+      rounded-3xl
+      border border-indigo-100
+      shadow-[0_8px_30px_rgb(15,23,42,0.06)]
+      hover:shadow-[0_18px_40px_rgb(79,70,229,0.15)]
       hover:-translate-y-1
       cursor-pointer
-      hover:scale-[1.02]
-      transition-all duration-300
+      hover:scale-[1.015]
+      transition-all duration-300 ease-out
+      before:absolute before:-right-12 before:-top-12
+      before:w-32 before:h-32 before:rounded-full
+      before:bg-indigo-500/10
+      before:transition-transform before:duration-500
+      group-hover:before:scale-150
     ">
-      <img
-        className="w-12 h-12 sm:w-16 sm:h-14 object-contain"
-        src={assets.appointments_icon}
-        alt=""
-      />
 
-      <div className="text-center">
+      <FaCalendarCheck className="
+        relative z-10
+        w-10 h-9
+        sm:w-14 sm:h-14
+        object-contain
+        text-indigo-600
+        drop-shadow-sm
+        transition-all duration-300
+        group-hover:scale-110
+        group-hover:-rotate-3
+      " />
+
+      <div className="relative z-10 text-center">
+
         <p className="
           text-2xl sm:text-3xl
           min-w-[55px]
           px-3
           py-1
-          rounded-full
+          rounded-2xl
           font-bold
-          bg-blue-700
+          bg-gradient-to-br from-indigo-600 to-indigo-800
           text-white
+          shadow-md shadow-indigo-200
+          transition-all duration-300
+          group-hover:shadow-lg
+          group-hover:shadow-indigo-300
         ">
           {dashData?.appointments}
         </p>
 
-        <p className="text-sm sm:text-lg text-gray-400 font-medium mt-1">
+        <p className="
+          text-sm sm:text-lg
+          text-slate-500
+          font-semibold
+          mt-2
+        ">
           Appointments
         </p>
+
       </div>
+
     </div>
 
 
     {/* QUEUE */}
     <div className="
+      group relative overflow-hidden
       flex items-center justify-between
-      min-h-[125px]
+      min-h-[128px]
       w-full
+      
       gap-3
-      bg-white
+      bg-black
       p-4 sm:p-5
-      rounded-2xl
-      border border-gray-200
-      shadow-sm
-      hover:shadow-lg
+      rounded-3xl
+      border border-violet-100
+      shadow-[0_8px_30px_rgb(15,23,42,0.06)]
+      hover:shadow-[0_18px_40px_rgb(124,58,237,0.15)]
       hover:-translate-y-1
       cursor-pointer
-      hover:scale-[1.02]
-      transition-all duration-300
+      hover:scale-[1.015]
+      transition-all duration-300 ease-out
+      before:absolute before:-right-12 before:-top-12
+      before:w-32 before:h-32 before:rounded-full
+      before:bg-violet-500/10
+      before:transition-transform before:duration-500
+      group-hover:before:scale-150
     ">
 
       <MdFormatListNumbered
         className="
+          relative z-10
           w-12 h-12
           sm:w-14 sm:h-14
           p-2
-          bg-gray-200
-          rounded-xl
+          text-violet-600
+          bg-violet-50
+          border border-violet-100
+          rounded-2xl
+          shadow-sm
+          transition-all duration-300
+          group-hover:scale-110
+          group-hover:bg-violet-100
+          group-hover:rotate-3
         "
       />
 
-      <div className="text-center">
+      <div className="relative z-10  text-center">
+
         <p className="
           text-2xl sm:text-3xl
           min-w-[55px]
           px-3
           py-1
-          rounded-full
+          rounded-2xl
           font-bold
-          bg-blue-700
+          bg-gradient-to-br from-violet-600 to-violet-800
           text-white
+          shadow-md shadow-violet-200
+          transition-all duration-300
+          group-hover:shadow-lg
+          group-hover:shadow-violet-300
         ">
           {dashData?.QueueNumber}
         </p>
 
-        <p className="text-sm sm:text-lg text-gray-400 font-medium mt-1">
+        <p className="
+          text-sm sm:text-lg
+          text-slate-500
+          font-semibold
+          mt-2
+        ">
           Queue Number
         </p>
+
       </div>
 
     </div>
@@ -173,12 +253,12 @@ const DoctorDashBoard = () => {
 
   {/* ================= LATEST BOOKINGS ================= */}
   <div className="
-    bg-white
-    rounded-2xl
-    border border-gray-200
-    shadow-sm
+    bg-blue-400
+    rounded-3xl
+    border border-slate-200
+    shadow-[0_10px_35px_rgb(15,23,42,0.06)]
     overflow-hidden
-    mt-5 sm:mt-6
+    mt-5 sm:mt-7
   ">
 
     {/* HEADER */}
@@ -187,18 +267,28 @@ const DoctorDashBoard = () => {
       gap-2.5
       px-4 sm:px-6
       py-4
-      border-b border-gray-200
-      bg-gradient-to-r from-gray-50 to-white
+      border-b border-slate-200
+      bg-gradient-to-r from-blue-50 via-white to-indigo-50
     ">
+
       <img
-        className="w-5 h-5 object-contain"
+        className="
+          w-5 h-5
+          object-contain
+          opacity-80
+        "
         src={assets.list_icon}
         alt=""
       />
 
-      <p className="text-gray-700 font-semibold text-base sm:text-lg">
+      <p className="
+        text-slate-800
+        font-bold
+        text-base sm:text-lg
+      ">
         Latest Bookings
       </p>
+
     </div>
 
 
@@ -217,10 +307,11 @@ const DoctorDashBoard = () => {
             gap-3 sm:gap-4
             px-4 sm:px-6
             py-4
-            border-b border-gray-100
+            border-b border-slate-100
             last:border-b-0
-            hover:bg-blue-50/50
+            hover:bg-blue-50/60
             transition-all duration-300
+            group
           "
         >
 
@@ -235,9 +326,12 @@ const DoctorDashBoard = () => {
                 sm:w-14 sm:h-14
                 object-cover
                 border-2 border-white
-                shadow-sm
-                ring-1 ring-gray-200
+                shadow-md
+                ring-2 ring-blue-100
                 flex-shrink-0
+                transition-all duration-300
+                group-hover:ring-blue-300
+                group-hover:scale-105
               "
               src={item.userData.image}
               alt=""
@@ -246,18 +340,21 @@ const DoctorDashBoard = () => {
             <div className="min-w-0">
 
               <p className="
-                text-gray-800
-                font-semibold
+                text-slate-800
+                font-bold
                 text-sm sm:text-base
                 truncate
+                transition-colors duration-300
+                group-hover:text-blue-700
               ">
                 {item.userData.name}
               </p>
 
               <p className="
-                text-gray-500
+                text-slate-500
                 text-xs sm:text-sm
                 mt-1
+                font-medium
               ">
                 {slotDateFormat(item.slotDate)}
               </p>
@@ -282,16 +379,22 @@ const DoctorDashBoard = () => {
                 inline-flex
                 items-center
                 gap-2
-                px-3
+                px-4
                 py-2
-                rounded-xl
-                bg-red-50
+                rounded-2xl
+                bg-gradient-to-r from-red-50 to-rose-50
                 border border-red-200
                 text-red-600
                 text-xs sm:text-sm
-                font-semibold
+                font-bold
+                shadow-sm
               ">
-                <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                <span className="
+                  w-2 h-2
+                  rounded-full
+                  bg-red-500
+                  shadow-[0_0_8px_rgba(239,68,68,0.5)]
+                "></span>
                 Cancelled
               </p>
 
@@ -301,16 +404,22 @@ const DoctorDashBoard = () => {
                 inline-flex
                 items-center
                 gap-2
-                px-3
+                px-4
                 py-2
-                rounded-xl
-                bg-emerald-50
+                rounded-2xl
+                bg-gradient-to-r from-emerald-50 to-green-50
                 border border-emerald-200
                 text-emerald-600
                 text-xs sm:text-sm
-                font-semibold
+                font-bold
+                shadow-sm
               ">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span className="
+                  w-2 h-2
+                  rounded-full
+                  bg-emerald-500
+                  shadow-[0_0_8px_rgba(16,185,129,0.5)]
+                "></span>
                 Completed
               </p>
 
@@ -338,8 +447,8 @@ const DoctorDashBoard = () => {
                     border border-red-100
                     hover:bg-red-500
                     hover:border-red-500
-                    hover:shadow-lg
-                    hover:shadow-red-100
+                    hover:shadow-xl
+                    hover:shadow-red-200
                     hover:scale-105
                     active:scale-95
                     transition-all duration-300
@@ -362,8 +471,8 @@ const DoctorDashBoard = () => {
                     border border-emerald-100
                     hover:bg-emerald-500
                     hover:border-emerald-500
-                    hover:shadow-lg
-                    hover:shadow-emerald-100
+                    hover:shadow-xl
+                    hover:shadow-emerald-200
                     hover:scale-105
                     active:scale-95
                     transition-all duration-300

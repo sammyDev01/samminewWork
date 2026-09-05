@@ -12,7 +12,7 @@ const DoctorQueue = () => {
   const getWaitingPatients = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5173/api/queue/waiting",
+        "http://localhost:40000/api/queue/waiting",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ const DoctorQueue = () => {
   const attendPatient = async (queueId) => {
     try {
       const response = await axios.put(
-        `http://localhost:5173/api/queue/attend/${queueId}`,
+        `http://localhost:40000/api/queue/attend/${queueId}`,
         {},
         {
           headers: {
@@ -70,7 +70,7 @@ const DoctorQueue = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5173/api/queue/complete/${currentPatient._id}`,
+        `http://localhost:4000/api/queue/complete/${currentPatient._id}`,
         {},
         {
           headers: {
@@ -107,7 +107,7 @@ const DoctorQueue = () => {
 
 
   return (
-    <div style={{ padding: "30px" }}>
+    <div className="min-h-screen bg-blue-200 max-md:ml-24 md:ml-75 w-full bg-gray-100 p-6">
       <h1>Doctor Queue</h1>
 
 

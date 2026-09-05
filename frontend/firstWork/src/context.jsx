@@ -55,7 +55,7 @@ const AppContextProvider = (props) => {
       setLoading(true);
 
       const { data } = await axios.post(
-        backendUrl+'/api/queue/generateQueue',
+        backendUrl + '/api/queue/generateQueue',
         {},{headers: {Authorization: `Bearer ${token}`}});
         console.log(data);
         
@@ -69,7 +69,7 @@ const AppContextProvider = (props) => {
       }
     } catch (error) {
       console.log(error.response?.data || error.message);
-    //   toast.error(data.message)
+      toast.error(error.response?.data?.message)
     } finally {
       setLoading(false);
     }

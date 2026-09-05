@@ -159,17 +159,16 @@ const Footer = () => {
           sm:text-sm
           text-slate-500
         ">
-
-          <li className="break-words">
-            +234-806-1898-2109
-          </li>
+            <a href="tel:+2348364675454" className='text-blue-500 hover:underline'>Call Us: <span className='font-normal text-gray-500'>(234) 8364-6754-54</span></a>
 
           <li className="
             break-all
             hover:text-blue-600
             transition-colors
           ">
-            sasbkakhhv@gmal.com
+            <a href="mailto:wduhealthcare@gmail.com" className='text-blue-500 hover:underline'>
+              wduhealthcare@gmail.com
+            </a>
           </li>
 
         </ul>

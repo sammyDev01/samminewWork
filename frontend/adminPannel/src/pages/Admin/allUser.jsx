@@ -15,7 +15,7 @@ const AllUser = () => {
   }, [aToken]);
 
   return (
-    <div className="m-4 sm:m-6 lg:m-8 max-h-[90vh] overflow-y-auto pr-2">
+    <div className="m-4 max-md:ml-24 md:ml-75 min-h-screen  overflow-y-auto pr-2">
 
       {/* Header */}
       <div className="flex items-center justify-between mb-7">

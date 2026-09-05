@@ -15,10 +15,12 @@ const generateQueue = async (req, res) => {
    
     console.log(userId)
  // Find an available doctor
-    const doctors = await doctorModel.find({});
+    const doctors = await doctorModel.find({available: true});
+
+    console.log("AVAILABLE DOCTORS:", doctors);
 
      if (!doctors || doctors.length === 0) {
-      return res.status(404).json({
+      return res.status(400).json({
         success: false,
         message: "No doctors available right now",
       });
@@ -42,7 +44,7 @@ const generateQueue = async (req, res) => {
   if (!doctor) {
   return res.status(400).json({
     success: false,
-    message: "No doctor is currently available"
+    message: "Available Doctors are currently in consultation. Please try again later.",
   });
 }
 
@@ -52,7 +54,7 @@ const generateQueue = async (req, res) => {
   
    
 
-    console.log("DOCTOR ID:", );
+    console.log("DOCTOR ID:", doctor._id);
 
     // Get last queue number
     const lastQueue = await QueueModel.findOne({

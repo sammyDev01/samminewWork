@@ -434,10 +434,11 @@ const MyProfile = () => {
           />
 
           :
+          <a href={`tel:${userData.phone}`} className='text-blue-500 hover:underline'>{userData.phone}</a>
 
-          <p className="text-blue-600">
-            {userData.phone}
-          </p>
+          // <p className="text-blue-600">
+          //   {userData.phone}
+          // </p>
       }
 
 

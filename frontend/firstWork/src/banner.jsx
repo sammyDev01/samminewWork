@@ -156,8 +156,8 @@ const Banner = () => {
       manage your appointments easily from anywhere.
     </p>
 
-
     {/* BUTTON */}
+    {token ? 
     <NavLink
       to="/queueGenerate"
       className="
@@ -185,8 +185,8 @@ const Banner = () => {
         duration-300
       "
     >
-
-      {!token? "Create Account":"Generate Queue or Check your Queue"}
+      
+       Generate Queue or Check your Queue
 
       <span className="
         flex
@@ -203,6 +203,17 @@ const Banner = () => {
       </span>
 
     </NavLink>
+    : <button onClick={() => navigate('/login')} className='group
+        mt-6
+        inline-flex
+        items-center
+        gap-3
+        rounded-full
+        bg-white
+        px-5
+        sm:px-7
+        py-3  text-sm  font-semibold text-slate-900 hover:bg-blue-700 active:bg-blue-700 hover:text-white transition-all duration-500'>Create Account or Login</button>
+}
 
   </div>
 

@@ -12,7 +12,7 @@ const DoctorList = () => {
     }
   },[aToken])
   return (
-    <div className="m-4 sm:m-6 lg:m-8 max-h-[90vh] overflow-y-auto pr-2">
+    <div className="m-4 sm:m-6 max-md:ml-25 md:ml-75 min-h-screen  max-h-[90vh] overflow-y-auto pr-2">
 
   {/* Header */}
   <div className="flex items-center justify-between mb-6">

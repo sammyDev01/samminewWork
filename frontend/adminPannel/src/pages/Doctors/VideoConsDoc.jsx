@@ -197,7 +197,7 @@ const DoctorConsultation = () => {
 
 
   return (
-    <div className="min-h-screen bg-slate-950 p-3 sm:p-5">
+    <div className="min-h-screen bg-blue-200 max-md:ml-24 md:ml-75 bg-slate-950 p-3 sm:p-5">
 
       <div className="max-w-7xl mx-auto">
 

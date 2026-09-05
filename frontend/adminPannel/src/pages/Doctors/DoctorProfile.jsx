@@ -43,7 +43,8 @@ const DoctorProfile = () => {
     }
   }, [dToken])
   return profileData && (
-   <div>
+   <div className="
+    w-full">
   <div className="
     w-full
     max-w-5xl
@@ -52,6 +53,7 @@ const DoctorProfile = () => {
     sm:px-5
     lg:px-8
     py-5
+    min-h-screen bg-blue-200 max-md:ml-24 md:ml-75
     sm:py-8
   ">
 

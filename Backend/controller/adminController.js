@@ -7,6 +7,8 @@ import jwt from 'jsonwebtoken'
 import appointmentModel from '../models/appointmentModel.js'
 import userModel from '../models/UserModel.js'
 import AdminModel from '../models/adminModel.js'
+import consultantModel from '../models/ConsultationModel.js'
+import QueueModel from '../models/QueueModel.js'
 // adding Doctor
 
 const addDoctor = async (req,res)=>{
@@ -189,6 +191,19 @@ const allDoctors = async (req, res) =>{
     }
 
 }
+
+const allConsultants = async (req, res) =>{
+    try {
+        const consultations = await consultantModel.find({}).populate("patientId").populate("doctorId").populate("queueId");
+        res.json({success: true, consultations})
+    console.log("here is all consultations", consultations)
+        
+    } catch (error) {
+    console.log("error connection", error)
+    res.json({success:false,message:error.message})
+    }
+
+}
 const allUsers = async (req, res) =>{
     try {
         const users = await userModel.find({}).select('-password')
@@ -254,6 +269,19 @@ const  appointmentCancelled = async (req, res) =>{
     }
 
 }
+// Api for Admin to get active queue for all users
+    const adminGetQueue = async (req, res) => {
+        try {
+        const queues = await QueueModel.find({ status: { $in: ["waiting", "in-consultation"] } }).populate("userData", "name email phone").populate("doctorData", "name email specialization").sort({ createdAt: 1 });
+        if (!queues || queues.length === 0) {
+            return res.json({ success: true, message: "No active queues found" });
+        }
+        res.json({ success: true, queue: queues });
+        } catch (error) {
+        console.log("error connection", error);
+        res.json({ success: false, message: error.message });
+        }
+    }
 
 // Api for Admin DashBoard
 const adminDashBoard = async(req, res)=>{
@@ -261,10 +289,12 @@ const adminDashBoard = async(req, res)=>{
         const doctors = await doctorModel.find({})
         const users = await userModel.find({})
         const appointment = await appointmentModel.find({})
+        const consultations = await consultantModel.find({});
 
         const dashData = {
             doctors: doctors.length,
             appointment: appointment.length,
+            consultations: consultations.length,
             patient: users.length,
             latestAppointment: appointment.reverse().slice(0,5)
         }
@@ -279,4 +309,4 @@ const adminDashBoard = async(req, res)=>{
 
 
 
-export {addDoctor, adminLogin, allDoctors, appointmentAdmin, appointmentCancelled , allUsers, adminDashBoard, createAdmin, LoginAdmin} 
+export {addDoctor, adminLogin, allDoctors,adminGetQueue, allConsultants, appointmentAdmin, appointmentCancelled , allUsers, adminDashBoard, createAdmin, LoginAdmin} 
