@@ -19,7 +19,7 @@ dotenv.config()
 const app = express()
 const server = http.createServer(app)
 const allowedOrigins = [
-  "https://new-wdu-healthsystemb.netlify.app",
+  "https://newwduhealthsystem.netlify.app",
   "https://new-wdu-adminsite-healthsysystem.netlify.app",
   "http://localhost:3000",
   "http://localhost:5174"
