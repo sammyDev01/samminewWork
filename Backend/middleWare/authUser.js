@@ -26,7 +26,7 @@ const authUser =  async (req, res, next) => {
             return res.status.json({success: false, message:"User No Longer exists. please login again."})
         }
 
-       req.userId = decoded_token.id; // Store the user ID in the request body for later use
+       req.userId = user.id; // Store the user ID in the request body for later use
 
         next() 
   } catch (error) {
