@@ -20,7 +20,7 @@ const DoctorDashBoard = () => {
         }
        },[dToken])
   return dashData && (
-<div className="w-full min-h-screen bg-blue-200 max-md:ml-24 md:ml-75 min-h-screenp-3 sm:p-5 lg:p-7 max-md:ml-24 md:ml-75 bg-slate-50">
+<div className="flex-1 w-full min-h-screen max-md:ml-24 sm:p-5 lg:p-7 max-md:ml-24 md:ml-75 bg-slate-50">
 
   {/* ================= DASHBOARD CARDS ================= */}
   <div className="

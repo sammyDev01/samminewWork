@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config'
-const authDoctor = (req, res, next) => {
+const authDoctor =  (req, res, next) => {
 
 
   try {

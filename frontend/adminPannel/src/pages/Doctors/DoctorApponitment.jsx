@@ -25,8 +25,7 @@ const DoctorApponitment = () => {
         }
        },[dToken])
   return (
-    <div className="w-full max-w-7xl px-3 min-h-screen bg-gray-200 max-md:ml-24 md:ml-75 sm:px-5 lg:px-8 py-4 sm:py-5">
-
+    <div className="flex-1 w-full max-w-7xl px-3 min-h-screen  bg-[#f1f5f9] max-md:ml-24 md:ml-75 sm:px-5 lg:px-8 py-4 sm:py-5">
   {/* ================= HEADER ================= */}
   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5 sm:mb-6">
 

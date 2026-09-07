@@ -32,7 +32,7 @@ const DoctorQueue = () => {
 
 
   return (
-    <div className="    min-h-screen bg-blue-200 max-md:ml-24 md:ml-75
+    <div className="min-h-screen bg-blue-200 max-md:ml-24 md:ml-75
  w-full bg-gray-100 p-6">
 
       {/* HEADER */}

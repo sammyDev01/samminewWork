@@ -216,8 +216,8 @@ const navigate  = useNavigate();
 
 
   return (
-   <div className="    min-h-screen bg-blue-200 max-md:ml-24 md:ml-75
- w-full bg-slate-50 p-3 sm:p-4 md:p-6">
+   <div className="flex-1  min-h-screen  max-md:ml-24 md:ml-75
+ w-full overflow-y-auto bg-[#f1f5f9] p-3 sm:p-4 md:p-6">
 
   <div className="w-full max-w-7xl mx-auto">
 

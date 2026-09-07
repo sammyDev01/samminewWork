@@ -165,9 +165,11 @@ const bookAppointment = async (req, res) => {
         const docData = await doctorModel.findById(doctorId).select('-password'); // Exclude the password field from the response
 
         if(!docData){
-            return res.json({success:false, message:"Doctor is not available"})
+            return res.json({success:false, message:"Doctor not found"})
         } 
-
+         if(docData.available === false){
+            return res.json({success: false, message : "Doctor is not available for booking appointment right now"})
+         }
         let slotsBooked = docData.slotsBooked || {}
         
         // checking for availability of the slot
