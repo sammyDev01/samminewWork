@@ -26,7 +26,7 @@ const [hide, setHide] =useState(false)
   h-16 sm:h-20
   px-3 sm:px-5 md:px-8 lg:px-10
   flex items-center justify-between
-  bg-gradient-to-r from-blue-950 via-blue-900 to-slate-950
+    bg-white
   border-b border-slate-200
   shadow-[0_2px_15px_rgba(15,23,42,0.05)]
   relative

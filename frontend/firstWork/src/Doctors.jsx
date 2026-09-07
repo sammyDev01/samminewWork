@@ -513,7 +513,7 @@ const Doctors = () => {
                   rounded-full
                   bg-green-400
                   opacity-60
-                  animate-ping
+                  animate-ping"
                 ></span>
 
                 <span className="
@@ -521,7 +521,7 @@ const Doctors = () => {
                   w-2
                   h-2
                   rounded-full
-                  bg-green-500
+                  bg-green-500"
                 ></span>
 
               </span>
@@ -617,7 +617,7 @@ const Doctors = () => {
               ">
                
 
-<MdMedicalServices /> Specialist
+<MdMedicalServices className='text-blue w-12' /> Specialist
               </span>
 
               <span className="
