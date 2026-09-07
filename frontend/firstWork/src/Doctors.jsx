@@ -463,9 +463,9 @@ const Doctors = () => {
             w-full
             aspect-[4/4.2]
             bg-gradient-to-br
-            from-blue-50
-            via-slate-50
-            to-cyan-50
+            from-black
+            via-blue-950
+            to-blue-600
             overflow-hidden
           ">
 

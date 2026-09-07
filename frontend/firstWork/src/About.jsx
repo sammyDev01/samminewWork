@@ -9,12 +9,12 @@ const About = () => {
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-12 '>
-        <img className='w-full md:max-w-[360px]' src={assets.about_image} alt="" />
+        <img className='w-full md:max-w-[360px]' src={assets.aboutWDU} alt="" />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600'>
           <p>Welcome to Western Delta University Health Care, Your trusted partner in managing your healthcare needs conveniently and efficiently. At WDU Healthcare center, we understand the challenges individuals face when it comes to scheduling doctors appointments and managing their health records</p>
           <p>WDU healthCare is committed to excellence in healthcare technology. we continuously strive to enhance our platform, integrating the latest advancements to improve user experience and deliver support service. Whether you're booking your first appointment or managing ongoing care, WDU healthCare is here to Support You every step of the way</p>
           <p className='text-gray-900 font-medium'>Our Vision</p>
-          <p>Our vission at WDU-Healthcare Service is to create a seamless heathcare experience for every user. we aim to bridge the gap between patient and healthcare providers, aking it easier for you to access the care you need, when you need it.</p>
+          <p>Our vision at WDU Healthcare Service is to create a seamless healthcare experience for every user. We aim to bridge the gap between patients and healthcare providers, making it easier for you to access the care you need, whenever you need it.</p>
         </div>
       </div>
 
