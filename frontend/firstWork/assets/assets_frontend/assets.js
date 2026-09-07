@@ -38,7 +38,7 @@ import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
 import wduLogo from './wduhealthspace4_logo.png'
 import MyLogo from './loveThis.png'
-import aboutWDU from './aboutImage.png'
+import aboutWDU from './aboutImage.jpg'
 
 
 
