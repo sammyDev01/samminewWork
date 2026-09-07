@@ -300,7 +300,7 @@ const Homeheader = () => {
           duration-500
           hover:scale-[1.02]
         "
-        src={assets.header_img}
+        src={assets.headerwdu}
         alt=""
       />
 

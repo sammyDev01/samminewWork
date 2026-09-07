@@ -39,11 +39,15 @@ import Pediatricians from './Pediatricians.svg'
 import wduLogo from './wduhealthspace4_logo.png'
 import MyLogo from './loveThis.png'
 import aboutWDU from './aboutImage.jpg'
+import contactwdu from  './contactwdu.jpg'
+import headerwdu from './header.jpg'
 
 
 
 export const assets = {
     appointment_img,
+    contactwdu,
+    headerwdu,
     header_img,
     group_profiles,
     logo,

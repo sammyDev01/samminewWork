@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config'
-import userModel from "../models/UserModel";
+import userModel from "../models/UserModel.js";
 
 const authUser =  async (req, res, next) => {
 
@@ -12,9 +12,9 @@ const authUser =  async (req, res, next) => {
         }
         const token = authHeader.split(" ")[1];
         console.log(token)
-        if(!token){
-            return res.json({success:false, message:"Token not found"})
-        }
+        // if(!token){
+        //     return res.json({success:false, message:"Token not found"})
+        // }
         const decoded_token = jwt.verify(token, process.env.JWT_SECRET)
         console.log(decoded_token)
         if(!decoded_token){
