@@ -6,8 +6,9 @@ import Homeheader from './homeheader';
 import Specialuty from './specialuty';
 import TopDoctors from './TopDoctors';
 import Banner from './banner';
-import AppContext from './context';
+import {AppContext} from './context';
 import { useContext } from 'react';
+import AppContextProvider from './context';
 
 const Home = () => {
   const navigate = useNavigate();
