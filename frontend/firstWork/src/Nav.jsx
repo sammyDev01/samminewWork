@@ -21,17 +21,15 @@ const Nav = () => {
 const [hide, setHide] =useState(false)
 
   return (
-  <nav className="
-  w-full
-  h-16 sm:h-20
-  px-3 sm:px-5 md:px-8 lg:px-10
-  flex items-center justify-between
-    bg-white
-  border-b border-slate-200
-  shadow-[0_2px_15px_rgba(15,23,42,0.05)]
-  relative
-  z-40
-">
+ <nav className="
+        w-full
+        bg-blue-300
+        h-20 sm:h-20
+        flex 
+        items-center
+        justify-between
+      ">
+
 
   {/* LOGO */}
   <img
@@ -54,110 +52,160 @@ const [hide, setHide] =useState(false)
 
 
   {/* DESKTOP NAV */}
-  <ul className="
-    hidden md:flex
-    items-center
-    gap-4 lg:gap-7 xl:gap-9
-    text-xs lg:text-sm
-    font-semibold
-    text-slate-600
-  ">
 
-    <NavLink
-      to="/"
-      className="
-        group relative py-2
-        hover:text-blue-700
-        transition-colors duration-300
-      "
-    >
-      <li className="list-none">Home</li>
+{/* DESKTOP NAV */}
+<ul className="
+  hidden md:flex
+  items-center
+  gap-1 lg:gap-2
+  p-1.5
+  rounded-full
+  bg-blue-50
+  border border-blue-100
+  shadow-sm
+">
 
-      <hr className="
-        absolute
-        bottom-0 left-1/2
-        -translate-x-1/2
-        w-0 group-hover:w-3/5
-        h-0.5
-        border-none
-        bg-blue-600
-        transition-all duration-300
-      " />
-    </NavLink>
+  {/* HOME */}
+  <NavLink
+    to="/"
+    className={({ isActive }) => `
+      relative
+      px-4 lg:px-5
+      py-2 lg:py-2.5
+      rounded-full
+      text-xs lg:text-sm
+      font-semibold
+      transition-all
+      duration-300
+      whitespace-nowrap
 
-
-    <NavLink
-      to="/about"
-      className="
-        group relative py-2
-        hover:text-blue-700
-        transition-colors duration-300
-      "
-    >
-      <li className="list-none">About</li>
-
-      <hr className="
-        absolute
-        bottom-0 left-1/2
-        -translate-x-1/2
-        w-0 group-hover:w-3/5
-        h-0.5
-        border-none
-        bg-blue-600
-        transition-all duration-300
-      " />
-    </NavLink>
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            shadow-md
+            shadow-blue-200
+          `
+          : `
+            text-slate-600
+            hover:bg-white
+            hover:text-blue-600
+            hover:shadow-sm
+          `
+      }
+    `}
+  >
+    Home
+  </NavLink>
 
 
-    <NavLink
-      to="/doctors"
-      className="
-        group relative py-2
-        hover:text-blue-700
-        transition-colors duration-300
-      "
-    >
-      <li className="list-none">Doctors</li>
+  {/* ABOUT */}
+  <NavLink
+    to="/about"
+    className={({ isActive }) => `
+      relative
+      px-4 lg:px-5
+      py-2 lg:py-2.5
+      rounded-full
+      text-xs lg:text-sm
+      font-semibold
+      transition-all
+      duration-300
+      whitespace-nowrap
 
-      <hr className="
-        absolute
-        bottom-0 left-1/2
-        -translate-x-1/2
-        w-0 group-hover:w-3/5
-        h-0.5
-        border-none
-        bg-blue-600
-        transition-all duration-300
-      " />
-    </NavLink>
-
-
-    <NavLink
-      to="/contact"
-      className="
-        group relative py-2
-        hover:text-blue-700
-        transition-colors duration-300
-      "
-    >
-      <li className="list-none">Contact</li>
-
-      <hr className="
-        absolute
-        bottom-0 left-1/2
-        -translate-x-1/2
-        w-0 group-hover:w-3/5
-        h-0.5
-        border-none
-        bg-blue-600
-        transition-all duration-300
-      " />
-    </NavLink>
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            shadow-md
+            shadow-blue-200
+          `
+          : `
+            text-slate-600
+            hover:bg-white
+            hover:text-blue-600
+            hover:shadow-sm
+          `
+      }
+    `}
+  >
+    About
+  </NavLink>
 
 
-   
+  {/* DOCTORS */}
+  <NavLink
+    to="/doctors"
+    className={({ isActive }) => `
+      relative
+      px-4 lg:px-5
+      py-2 lg:py-2.5
+      rounded-full
+      text-xs lg:text-sm
+      font-semibold
+      transition-all
+      duration-300
+      whitespace-nowrap
 
-  </ul>
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            shadow-md
+            shadow-blue-200
+          `
+          : `
+            text-slate-600
+            hover:bg-white
+            hover:text-blue-600
+            hover:shadow-sm
+          `
+      }
+    `}
+  >
+    Doctors
+  </NavLink>
+
+
+  {/* CONTACT */}
+  <NavLink
+    to="/contact"
+    className={({ isActive }) => `
+      relative
+      px-4 lg:px-5
+      py-2 lg:py-2.5
+      rounded-full
+      text-xs lg:text-sm
+      font-semibold
+      transition-all
+      duration-300
+      whitespace-nowrap
+
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            shadow-md
+            shadow-blue-200
+          `
+          : `
+            text-slate-600
+            hover:bg-white
+            hover:text-blue-600
+            hover:shadow-sm
+          `
+      }
+    `}
+  >
+    Contact
+  </NavLink>
+
+</ul>
+
 
 
   {/* RIGHT SIDE */}
@@ -227,6 +275,7 @@ const [hide, setHide] =useState(false)
       w-36
       pt-2
       z-50
+      md:m-4
      md:group-hover:block
       ${showMenus ? "block" : "hidden"}
     `}
@@ -234,12 +283,13 @@ const [hide, setHide] =useState(false)
     
     <div
       className="
-        w-45
+        w-56
         bg-white
         border border-slate-200
         rounded-2xl
         shadow-[0_15px_40px_rgba(15,23,42,0.12)]
-        p-2"
+        p-2
+        mr-2"
     >
 
       <p
@@ -326,6 +376,7 @@ const [hide, setHide] =useState(false)
           className="
             w-2 sm:w-2.5
             opacity-60
+            m-2
             group-hover:opacity-100
             group-hover:rotate-180
             transition-all duration-300
@@ -381,6 +432,7 @@ const [hide, setHide] =useState(false)
         cursor-pointer
         hover:scale-110
         transition-transform
+        m-3
       "
       alt=""
     />
@@ -451,78 +503,158 @@ const [hide, setHide] =useState(false)
 
 
       {/* MOBILE LINKS */}
-      <ul className="
-        flex flex-col
-        gap-2
-        px-5 pt-7
-        text-base
-        font-semibold
-        text-slate-600
-      ">
 
-        <NavLink
-          to="/"
-          onClick={() => setShowmenu(false)}
-          className="
-            rounded-xl
-            hover:bg-blue-100
+{/* MOBILE LINKS */}
+<ul className="
+  flex flex-col
+  gap-2
+  px-5
+  pt-7
+  text-base
+  font-semibold
+">
+
+  {/* HOME */}
+  <NavLink
+    to="/"
+    onClick={() => setShowmenu(false)}
+    className={({ isActive }) => `
+      rounded-2xl
+      transition-all
+      duration-300
+      border
+
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            border-blue-600
+            shadow-lg
+            shadow-blue-200
+            translate-x-1
+          `
+          : `
+            text-slate-600
+            border-transparent
+            hover:bg-blue-50
             hover:text-blue-700
-            transition
-          "
-        >
-          <p className="px-4 py-3">
-            HOME
-          </p>
-        </NavLink>
+          `
+      }
+    `}
+  >
+    <p className="px-4 py-3">
+      HOME
+    </p>
+  </NavLink>
 
 
-        <NavLink
-          to="/doctors"
-          onClick={() => setShowmenu(false)}
-          className="
-            rounded-xl
-            hover:bg-blue-100
+  {/* DOCTORS */}
+  <NavLink
+    to="/doctors"
+    onClick={() => setShowmenu(false)}
+    className={({ isActive }) => `
+      rounded-2xl
+      transition-all
+      duration-300
+      border
+
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            border-blue-600
+            shadow-lg
+            shadow-blue-200
+            translate-x-1
+          `
+          : `
+            text-slate-600
+            border-transparent
+            hover:bg-blue-50
             hover:text-blue-700
-            transition
-          "
-        >
-          <p className="px-4 py-3">
-            Doctors
-          </p>
-        </NavLink>
+          `
+      }
+    `}
+  >
+    <p className="px-4 py-3">
+      Doctors
+    </p>
+  </NavLink>
 
 
-        <NavLink
-          to="/about"
-          onClick={() => setShowmenu(false)}
-          className="
-            rounded-xl
-            hover:bg-blue-100
+  {/* ABOUT */}
+  <NavLink
+    to="/about"
+    onClick={() => setShowmenu(false)}
+    className={({ isActive }) => `
+      rounded-2xl
+      transition-all
+      duration-300
+      border
+
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            border-blue-600
+            shadow-lg
+            shadow-blue-200
+            translate-x-1
+          `
+          : `
+            text-slate-600
+            border-transparent
+            hover:bg-blue-50
             hover:text-blue-700
-            transition
-          "
-        >
-          <p className="px-4 py-3">
-            About
-          </p>
-        </NavLink>
-        <NavLink
-          to="/contact"
-          onClick={() => setShowmenu(false)}
-          className="
-            rounded-xl
-            hover:bg-blue-100
-            hover:text-blue-700
-            transition
-            mt-2
-          "
-        >
-          <p className="px-4 py-3">
-            Contact
-          </p>
-        </NavLink>
+          `
+      }
+    `}
+  >
+    <p className="px-4 py-3">
+      About
+    </p>
+  </NavLink>
 
-      </ul>
+
+  {/* CONTACT */}
+  <NavLink
+    to="/contact"
+    onClick={() => setShowmenu(false)}
+    className={({ isActive }) => `
+      rounded-2xl
+      transition-all
+      duration-300
+      border
+
+      ${
+        isActive
+          ? `
+            bg-blue-600
+            text-white
+            border-blue-600
+            shadow-lg
+            shadow-blue-200
+            translate-x-1
+          `
+          : `
+            text-slate-600
+            border-transparent
+            hover:bg-blue-50
+            hover:text-blue-700
+          `
+      }
+    `}
+  >
+    <p className="px-4 py-3">
+      Contact
+    </p>
+  </NavLink>
+
+</ul>
+
 
     </div>
 

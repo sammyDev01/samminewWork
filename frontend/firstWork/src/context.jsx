@@ -34,17 +34,35 @@ const AppContextProvider = (props) => {
     
     const loadUserData = async () => {
         try {
+            setLoading(true)
+            const saveToken = localStorage.getItem("token")
+
+            if(!saveToken){
+                setToken(false);
+                setUserData(false);
+                return
+            }
             const {data} = await axios.get(backendUrl + '/api/user/getUserData', {headers:{Authorization:`Bearer ${token}`}})
             if(data.success){
                 setUserData(data.user)
+                setToken(saveToken)
             } else{
+                localStorage.removeItem("token")
+                setToken(false);
+                setUserData(false)
                 toast.error(data.message)
             }
         } catch (error) {
+            if(error.response?.status === 401){
+                localStorage.removeItem("token")
+                setToken(false);
+                setUserData(false);
+            }
             console.log(error)
             toast.error(error.message)
-        }
-    } 
+        } finally {
+      setLoading(false);
+    }} 
 
 //   const token = localStorage.getItem("token");
 

@@ -12,9 +12,9 @@ const authUser =  async (req, res, next) => {
         }
         const token = authHeader.split(" ")[1];
         console.log(token)
-        // if(!token){
-        //     return res.json({success:false, message:"Token not found"})
-        // }
+        if(!token){
+            return res.json({success:false, message:"Token not found"})
+        }
         const decoded_token = jwt.verify(token, process.env.JWT_SECRET)
         console.log(decoded_token)
         if(!decoded_token){
@@ -23,7 +23,7 @@ const authUser =  async (req, res, next) => {
         const user = await userModel.findById(decoded_token.id)
 
         if (!user){
-            return res.status.json({success: false, message:"User No Longer exists. please login again."})
+            return res.status(401).json({success: false, message:"User No Longer exists. please login again."})
         }
 
        req.userId = user.id; // Store the user ID in the request body for later use
