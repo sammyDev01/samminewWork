@@ -45,11 +45,13 @@ import patient from './istockphoto-928729662-1024x1024.jpg'
 import patient1 from './istockphoto-1193433534-1024x1024.jpg'
 import docwdu from './doctorwdu1.png'
 import docwdu1 from './patient1.jpg'
+import twoDoc from './twodoc.jpg'
 
 
 export const assets = {
     appointment_img,
     docwdu,
+    twoDoc,
     docwdu1,
     patient,
     patient1,

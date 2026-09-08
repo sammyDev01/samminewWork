@@ -23,7 +23,7 @@ const Homeheader = () => {
       BACKGROUND IMAGE
   ========================================================= */}
   <img
-    src={assets.patient1}
+    src={assets.docwdu1}
     alt=""
     className="
       absolute
@@ -307,7 +307,7 @@ const Homeheader = () => {
               w-full
               object-cover
             "
-            src={assets.patient1}
+            src={assets.twoDoc}
             alt="Patient"
           />
 

@@ -27,14 +27,11 @@ function App() {
 const {width} = useWindowSize();
   return (
     <div className="
-  
-  mx-2
-  sm:mx-[5%]
-  bg-gradient-to-br
-  from-slate-50
-  via-white
-  to-blue-50/50
-">
+      bg-gradient-to-br
+      from-blue-300
+      via-white
+      to-blue-800
+    ">
       <ToastContainer />
      
       
@@ -49,7 +46,7 @@ const {width} = useWindowSize();
         <Route path='/contact' element={<Contact />} />
         <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/my-appointment' element={<MyAppointment />} />
-        <Route path='/appointment/:docId' element={<Appointment />} />userCons
+        <Route path='/appointment/:docId' element={<Appointment />} />
         <Route path='/queueGenerate' element={<QueueGenerate />} />
         {/* <Route path='/service' element={<Services />} /> */}
         <Route path='/liveVideo/:appointmentId' element={<Consultationvideo />} />
